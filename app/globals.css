@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Warm, off-white background */
+  --background: #faf8f6;
+  --foreground: #1a1918;
+  
+  /* Centralized accent color - easily customizable */
+  --accent-color: #d97f6f;
+  
+  /* Neutral grays for subtle elements */
+  --border-color: #e8e6e4;
+  --text-secondary: #6b6b6b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent-color);
+  --color-border: var(--border-color);
+  --color-text-secondary: var(--text-secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-playfair-display);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Editorial typography system */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Display typeface for headlines */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Uppercase labels with letter spacing */
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Accent color utilities */
+.accent {
+  color: var(--accent-color);
+}
+
+/* Links with accent color */
+a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, border-color, background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
