@@ -6,7 +6,7 @@ export default function Footer() {
     { label: "About", href: "/about" },
     { label: "Experience", href: "/experience" },
     { label: "Writing", href: "/writing" },
-    { label: "Resume", href: "/resume" },
+    { label: "Resume", href: "/resume.pdf", external: true },
   ];
 
   const socialLinks = [
@@ -36,6 +36,8 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
                     className="text-sm leading-relaxed hover:opacity-60 transition-opacity"
                     style={{ color: 'var(--text-secondary)' }}
                   >

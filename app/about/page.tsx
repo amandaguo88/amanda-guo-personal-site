@@ -115,9 +115,14 @@ export default function AboutPage() {
                   >
                     View my experience <span aria-hidden="true">→</span>
                   </Link>
-                  <Link href="/resume" className="font-semibold">
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold"
+                  >
                     View my resume <span aria-hidden="true">→</span>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
